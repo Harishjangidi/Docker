@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inspiration Board</title>
+  <style>
+    :root{
+      --bg1:#0f172a;
+      --bg2:#1e293b;
+      --card:#ffffff14;
+      --text:#f8fafc;
+      --muted:#cbd5e1;
+      --accent:#38bdf8;
+      --accent2:#facc15;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+
+    .wrap {
+      width: min(900px, 100%);
+      background: var(--card);
+      border: 1px solid #ffffff2a;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 16px 40px rgba(0,0,0,.35);
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+      color: var(--accent2);
+    }
+
+    p.sub {
+      margin: 0 0 20px;
+      color: var(--muted);
+    }
+
+    .quote {
+      margin: 14px 0;
+      padding: 14px 16px;
+      border-left: 4px solid var(--accent);
+      background: #ffffff0d;
+      border-radius: 8px;
+    }
+
+    .text {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 1.02rem;
+    }
+
+    .author {
+      margin-top: 8px;
+      color: #bae6fd;
+      font-style: italic;
+      font-size: 0.95rem;
+      text-align: right;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid #38bdf866;
+      background: #38bdf826;
+      color: #dff4ff;
+      font-size: .8rem;
+      letter-spacing: .2px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>🌟 Daily Inspiration</h1>
+    <p class="sub">A few words to keep you moving forward, one day at a time.</p>
+
+    <section class="quote">
+      <p class="text">“Success is the sum of small efforts, repeated day in and day out.”</p>
+      <div class="author">— Robert Collier</div>
+    </section>
+
+    <section class="quote">
+      <p class="text">“It always seems impossible until it’s done.”</p>
+      <div class="author">— Nelson Mandela</div>
+    </section>
+
+    <section class="quote">
+      <p class="text">“You do not rise to the level of your goals; you fall to the level of your systems.”</p>
+      <div class="author">— James Clear</div>
+    </section>
+
+    <section class="quote">
+      <p class="text">“Great things are done by a series of small things brought together.”</p>
+      <div class="author">— Vincent van Gogh</div>
+    </section>
+
+    <section class="quote">
+      <p class="text">“Don’t watch the clock; do what it does. Keep going.”</p>
+      <div class="author">— Sam Levenson</div>
+    </section>
+
+    <div class="footer">
+      Build. Learn. Improve. Repeat. 🚀<br />
+      <span class="tag">Powered by Harish's Docker Web Server</span>
+    </div>
+  </main>
+</body>
+</html>

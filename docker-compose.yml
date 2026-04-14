@@ -1,0 +1,22 @@
+version: '3'
+services:
+  one:
+    image: nginx
+    ports:
+      - "8081:80"
+    networks:
+      - network-one
+
+  two:
+    image: httpd
+    ports:
+      - "8082:80"
+    networks:
+      - network-two
+
+networks:
+  network-one:
+    driver: bridge
+  network-two:
+    driver: bridge
+

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inspire • Modern Quote Wall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#050816;
+      --card:#0d1328cc;
+      --text:#e8ecff;
+      --muted:#a9b4d0;
+      --line:#ffffff1f;
+      --accent:#7c5cff;
+      --accent2:#00d4ff;
+      --accent3:#22c55e;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 20px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1000px 500px at 10% -10%, #7c5cff33, transparent 60%),
+        radial-gradient(900px 500px at 100% 0%, #00d4ff2a, transparent 60%),
+        radial-gradient(700px 400px at 50% 100%, #22c55e1f, transparent 65%),
+        var(--bg);
+      overflow-x:hidden;
+    }
+
+    .noise{
+      position:fixed; inset:0; pointer-events:none; opacity:.05;
+      background-image:
+        linear-gradient(to right, #fff 1px, transparent 1px),
+        linear-gradient(to bottom, #fff 1px, transparent 1px);
+      background-size: 3px 3px;
+      mix-blend-mode:soft-light;
+    }
+
+    .container{
+      width:min(1060px, 92%);
+      margin:42px auto;
+    }
+
+    .hero{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:22px;
+    }
+
+    .badge{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#ffffff08;
+      color:#cbd5ff;
+      font-size:13px;
+      backdrop-filter: blur(8px);
+    }
+
+    h1{
+      margin:10px 0 6px;
+      font-size:clamp(1.8rem,4vw,3rem);
+      line-height:1.08;
+      letter-spacing:-.02em;
+    }
+
+    .sub{
+      margin:0;
+      color:var(--muted);
+      max-width:620px;
+      line-height:1.6;
+    }
+
+    .btn{
+      text-decoration:none;
+      color:white;
+      font-weight:600;
+      padding:12px 16px;
+      border-radius:12px;
+      border:1px solid #ffffff29;
+      background: linear-gradient(135deg, #7c5cff, #00b8ff);
+      box-shadow: 0 8px 28px #4b57ff66;
+      transition:.25s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{ transform: translateY(-2px); filter:saturate(1.15); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+
+    .card{
+      grid-column: span 6;
+      position:relative;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:20px 18px 16px;
+      backdrop-filter: blur(10px);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      width:160px; height:160px;
+      right:-45px; top:-45px;
+      border-radius:50%;
+      background: radial-gradient(circle at center, #ffffff28, transparent 70%);
+      z-index:-1;
+    }
+
+    .card.big{ grid-column: span 12; padding:26px 22px; }
+
+    .q{
+      margin:0;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      line-height:1.65;
+      color:#f4f7ff;
+    }
+
+    .author{
+      margin-top:12px;
+      font-size:.92rem;
+      color:#bcd2ff;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .dot{
+      width:7px;height:7px;border-radius:99px;background:var(--accent2);
+      box-shadow:0 0 12px var(--accent2);
+    }
+
+    .highlight{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:.76rem;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:#d8dcff;
+      border:1px solid #ffffff33;
+      background:#ffffff0d;
+      margin-bottom:12px;
+    }
+
+    .footer{
+      margin-top:16px;
+      color:#95a3c5;
+      font-size:.88rem;
+      text-align:center;
+    }
+
+    @media (max-width: 860px){
+      .card{ grid-column: span 12; }
+      .hero{ flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <div class="container">
+    <div class="hero">
+      <div>
+        <span class="badge">✨ Daily Mindset • Modern Edition</span>
+        <h1>Inspire. Build. Repeat.</h1>
+        <p class="sub">A clean modern quote wall for your Docker web page — motivating, readable, and professional.</p>
+      </div>
+      <a class="btn" href="#" onclick="location.reload()">Refresh Vibe</a>
+    </div>
+
+    <section class="grid">
+      <article class="card big">
+        <span class="highlight">Featured</span>
+        <p class="q">“You do not rise to the level of your goals. You fall to the level of your systems.”</p>
+        <div class="author"><span class="dot"></span> James Clear</div>
+      </article>
+
+      <article class="card">
+        <p class="q">“Success is the sum of small efforts, repeated day in and day out.”</p>
+        <div class="author"><span class="dot"></span> Robert Collier</div>
+      </article>
+
+      <article class="card">
+        <p class="q">“It always seems impossible until it’s done.”</p>
+        <div class="author"><span class="dot"></span> Nelson Mandela</div>
+      </article>
+
+      <article class="card">
+        <p class="q">“Great things are done by a series of small things brought together.”</p>
+        <div class="author"><span class="dot"></span> Vincent van Gogh</div>
+      </article>
+
+      <article class="card">
+        <p class="q">“Don’t watch the clock; do what it does. Keep going.”</p>
+        <div class="author"><span class="dot"></span> Sam Levenson</div>
+      </article>
+    </section>
+
+    <p class="footer">Made with ❤️ by Harish • Served from Docker + Apache</p>
+  </div>
+</body>
+</html>
